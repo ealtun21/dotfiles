@@ -3,6 +3,7 @@ if status is-interactive
     eval "$(starship init fish)"
     cat ~/.cache/wal/sequences
     PF_INFO="ascii title os kernel uptime pkgs memory" pfetch
+    pywalfox update 2> /dev/null & && disown
 end
 alias hx=helix
 set fish_greeting

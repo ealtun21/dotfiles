@@ -59,7 +59,6 @@ mainbox {
     spacing:                      0px;
     margin:                       0px;
     background-color:             @background;
-    background-image:             @current-image;
     children:                     ["listbox"];
 }
 
