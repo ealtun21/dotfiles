@@ -78,7 +78,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
-~/.config/waybar/launch.sh
+waybar
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
@@ -93,11 +93,5 @@ swww img $wallpaper \
     --transition-type=$transition_type \
     --transition-duration=0.7 \
     --transition-pos "$( hyprctl cursorpos )"
-
-# ----------------------------------------------------- 
-# Send notification
-# ----------------------------------------------------- 
-sleep 1
-notify-send "Colors and Wallpaper updated" "with image $newwall"
 
 echo "DONE!"

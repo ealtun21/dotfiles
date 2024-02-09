@@ -6,7 +6,6 @@
 # |____/|_| |_|\__,_| .__/|___/_| |_|\___/ \__| 
 #                   |_|                         
 #  
-# by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
 c=$(gum input --placeholder "Enter a comment for the snapshot...")

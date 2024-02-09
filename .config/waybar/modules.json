@@ -5,7 +5,6 @@
 // |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
 //                                        
 //  
-// by Stephan Raabe (2023) 
 // ----------------------------------------------------- 
 //
 {
@@ -21,7 +20,7 @@
 			"default": ""
         },
     },
-    
+
     // Taskbar
     "wlr/taskbar": {
         "format": "{icon}",
@@ -53,22 +52,6 @@
         "separate-outputs": true
     },
 
-    // ML4W Welcome App
-    "custom/ml4w-welcome": {
-        "on-click": "~/.config/apps/ML4W_Welcome-x86_64.AppImage",
-        "format": " ",
-        "tooltip": false
-    },
-
-    // Youtube Subscriber Count
-    "custom/youtube": {
-        "format": " {}",
-        "exec": "python ~/private/youtube.py",
-        "restart-interval": 600,
-        "on-click": "chromium https://studio.youtube.com",
-        "tooltip": false
-    },
-    
     // Cliphist
     "custom/cliphist": {
         "format": "",
@@ -87,7 +70,12 @@
         "exec": "~/.config/scripts/updates.sh",
         "restart-interval": 60,
         "on-click": "alacritty -e ~/.config/scripts/installupdates.sh",
-        "on-click-right": "~/.config/.settings/software.sh",
+        "tooltip": false
+    },
+
+    // Theme Starter Label
+    "custom/starter": {
+        "format": "THEME STARTER",
         "tooltip": false
     },
     
@@ -109,7 +97,7 @@
     // Settings
     "custom/settings": {
         "format": "",
-        "on-click": "alacritty --class .config-floating -e ~/.config/hypr/start-settings.sh",
+        "on-click": "alacritty --class .config-floating -e ~/.config/hypr/settings/settings.sh",
         "tooltip": false
     },
 
@@ -122,71 +110,40 @@
 
     // Filemanager Launcher
     "custom/filemanager": {
-        "format": "",
-        "on-click": "~/.config/.settings/filemanager.sh",
-        "tooltip": false
-    },
-
-    // Outlook Launcher
-    "custom/outlook": {
-        "format": "",
-        "on-click": "chromium --app=https://outlook.office.com/mail/",
-        "tooltip": false
-    },
-
-    // Teams Launcher
-    "custom/teams": {
-        "format": "",
-        "on-click": "chromium --app=https://teams.microsoft.com/go",
+        "format": "",
+        "on-click": "thunar",
         "tooltip": false
     },
 
     // Browser Launcher
     "custom/browser": {
-        "format": "",
+        "format": "",
         "on-click": "~/.config/.settings/browser.sh",
         "tooltip": false
     },    
 
+    // ML4W Welcome App
+    "custom/ml4w-welcome": {
+        "on-click": "~/.config/apps/ML4W_Welcome-x86_64.AppImage",
+        "format": " ",
+        "tooltip": false
+    },
+
     // ChatGPT Launcher
     "custom/chatgpt": {
-        "format": " ",
+        "format": "",
         "on-click": "chromium --app=https://chat.openai.com",
-        "tooltip": false
-    },
-
-    // Calculator
-    "custom/calculator": {
-        "format": "",
-        "on-click": "qalculate-gtk",
-        "tooltip": false
-    },
-
-    // Windows VM
-    "custom/windowsvm": {
-        "format": "",
-        "on-click": "~/.config/scripts/launchvm.sh",
         "tooltip": false
     },
 
     // Rofi Application Launcher
     "custom/appmenu": {
-        // START APPS LABEL
         "format": "Apps",
-        // END APPS LABEL
         "on-click": "rofi -show drun -replace",
         "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
-
-    // Rofi Application Launcher
-    "custom/appmenuicon": {
-        "format": "",
-        "on-click": "rofi -show drun -replace",
-        "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-        "tooltip": false
-    },    
-
+    
     // Power Menu
     "custom/exit": {
         "format": "",
@@ -207,7 +164,7 @@
 
     // System tray
     "tray": {
-        "icon-size": 21,
+        // "icon-size": 21,
         "spacing": 10
     },
 
@@ -215,9 +172,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        // START CLOCK FORMAT
         "format-alt": "{:%Y-%m-%d}"
-        // END CLOCK FORMAT
     },
 
     // System
@@ -269,11 +224,13 @@
     
     // Group Settings
     "group/settings": {
-        "orientation": "horizontal",
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
         "modules": [
-            // START CHATGPT TOOGLE
-//"custom/chatgpt",
-            // END CHATGPT TOOGLE
             "custom/settings",
             "custom/waybarthemes",
             "custom/wallpaper"
@@ -284,8 +241,8 @@
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
-            "custom/browser",
             "custom/filemanager",
+            "custom/browser"
          ]
     },
 
@@ -293,14 +250,13 @@
     "network": {
         "format": "{ifname}",
         "format-wifi": "   {signalStrength}%",
-        "format-ethernet": "  {ifname}",
-        "format-disconnected": "Disconnected",
+        "format-ethernet": "  {ipaddr}",
+        "format-disconnected": "Not connected", //An empty format will hide the module.
         "tooltip-format": " {ifname} via {gwaddri}",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "~/.config/.settings/networkmanager.sh"
     },
 
     // Battery
@@ -342,7 +298,6 @@
 
     // Bluetooth
     "bluetooth": {
-        "format": " {status}",
         "format-disabled": "",
         "format-off": "",
         "interval": 30,
