@@ -28,15 +28,15 @@ alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
 alias shutdown='systemctl poweroff'
 alias v='$EDITOR'
-alias ts='~/dotfiles/scripts/snapshot.sh'
+alias ts='~/.config/scripts/snapshot.sh'
 alias matrix='cmatrix'
 alias wifi='nmtui'
 alias od='~/private/onedrive.sh'
-alias rw='~/dotfiles/waybar/reload.sh'
+alias rw='~/.config/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
-alias dot="cd ~/dotfiles"
-alias cleanup='~/dotfiles/scripts/cleanup.sh'
-alias ml4w='~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage'
+alias dot="cd ~/.config"
+alias cleanup='~/.config/scripts/cleanup.sh'
+alias ml4w='~/.config/apps/ML4W_Welcome-x86_64.AppImage'
 
 # -----------------------------------------------------
 # Window Managers
@@ -62,17 +62,17 @@ alias gcheck="git checkout"
 # SCRIPTS
 # -----------------------------------------------------
 
-alias gr='python ~/dotfiles/scripts/growthrate.py'
+alias gr='python ~/.config/scripts/growthrate.py'
 alias ChatGPT='python ~/mychatgpt/mychatgpt.py'
 alias chat='python ~/mychatgpt/mychatgpt.py'
-alias ascii='~/dotfiles/scripts/figlet.sh'
+alias ascii='~/.config/scripts/figlet.sh'
 
 # -----------------------------------------------------
 # VIRTUAL MACHINE
 # -----------------------------------------------------
 
 alias vm='~/private/launchvm.sh'
-alias lg='~/dotfiles/scripts/looking-glass.sh'
+alias lg='~/.config/scripts/looking-glass.sh'
 alias vmstart='virsh --connect qemu:///system start win11'
 alias vmstop='virsh --connect qemu:///system destroy win11'
 
@@ -80,9 +80,9 @@ alias vmstop='virsh --connect qemu:///system destroy win11'
 # EDIT CONFIG FILES
 # -----------------------------------------------------
 
-alias confq='$EDITOR ~/dotfiles/qtile/config.py'
-alias confp='$EDITOR ~/dotfiles/picom/picom.conf'
-alias confb='$EDITOR ~/dotfiles/.bashrc'
+alias confq='$EDITOR ~/.config/qtile/config.py'
+alias confp='$EDITOR ~/.config/picom/picom.conf'
+alias confb='$EDITOR ~/.config/.bashrc'
 
 # -----------------------------------------------------
 # EDIT NOTES
