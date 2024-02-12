@@ -78,7 +78,9 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
-waybar
+~/.config/waybar/launch.sh
+cat ~/.cache/wal/sequences
+pywalfox update 2> /dev/null &
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
