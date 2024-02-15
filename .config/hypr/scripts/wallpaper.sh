@@ -76,10 +76,12 @@ echo "* { current-image: url(\"$wallpaper\", height); }" > "$rasi_file"
 newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
 # ----------------------------------------------------- 
-# Reload waybar with new colors
+# Reload waybar with new colors & Firefox 
 # -----------------------------------------------------
+pywal-opacity.sh
 ~/.config/waybar/launch.sh
 cat ~/.cache/wal/sequences
+# pywal-discord
 pywalfox update 2> /dev/null &
 
 # ----------------------------------------------------- 
