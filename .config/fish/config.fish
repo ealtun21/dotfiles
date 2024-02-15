@@ -1,10 +1,10 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     eval "$(starship init fish)"
-    cat ~/.cache/wal/sequences
     PF_INFO="ascii title os kernel uptime pkgs memory" pfetch
     pywalfox update 2> /dev/null & && disown
 end
+cat ~/.cache/wal/sequences
 alias hx=helix
 set fish_greeting
 alias ls='eza --icons'
