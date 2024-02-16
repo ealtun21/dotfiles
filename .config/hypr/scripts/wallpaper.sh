@@ -48,14 +48,18 @@ case $1 in
         done | rofi -dmenu -replace -config ~/.config/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
+            pywal-opacity.sh
             exit
         fi
         wal -q -i ~/wallpaper/$selected
+        pywal-opacity.sh
+
     ;;
 
     # Randomly select wallpaper 
     *)
         wal -q -i ~/wallpaper/
+        pywal-opacity.sh
     ;;
 
 esac
