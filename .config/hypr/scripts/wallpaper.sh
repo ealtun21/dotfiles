@@ -32,10 +32,10 @@ case $1 in
     "init")
         if [ -f $cache_file ]; then
             wal -q -i $current_wallpaper
-            pywal-opacity.sh
+            ~/.config/hypr/scripts/pywal-opacity.sh 
         else
             wal -q -i ~/wallpaper/
-            pywal-opacity.sh
+            ~/.config/hypr/scripts/pywal-opacity.sh 
         fi
     ;;
 
@@ -48,18 +48,18 @@ case $1 in
         done | rofi -dmenu -replace -config ~/.config/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
-            pywal-opacity.sh
+            ~/.config/hypr/scripts/pywal-opacity.sh 
             exit
         fi
         wal -q -i ~/wallpaper/$selected
-        pywal-opacity.sh
+        ~/.config/hypr/scripts/pywal-opacity.sh 
 
     ;;
 
     # Randomly select wallpaper 
     *)
         wal -q -i ~/wallpaper/
-        pywal-opacity.sh
+        ~/.config/hypr/scripts/pywal-opacity.sh 
     ;;
 
 esac
@@ -84,7 +84,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 # ----------------------------------------------------- 
 # Reload waybar with new colors & Firefox 
 # -----------------------------------------------------
-pywal-opacity.sh
+    ~/.config/hypr/scripts/pywal-opacity.sh 
 ~/.config/waybar/launch.sh
 cat ~/.cache/wal/sequences
 # pywal-discord
