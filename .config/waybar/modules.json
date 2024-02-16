@@ -69,7 +69,7 @@
         "return-type": "json",       
         "exec": "~/.config/scripts/updates.sh",
         "restart-interval": 60,
-        "on-click": "alacritty -e ~/.config/scripts/installupdates.sh",
+        "on-click": "alacritty -e fish -c 'bash ~/.config/scripts/installupdates.sh'",
         "tooltip": false
     },
 
