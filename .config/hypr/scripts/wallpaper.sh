@@ -32,8 +32,10 @@ case $1 in
     "init")
         if [ -f $cache_file ]; then
             wal -q -i $current_wallpaper
+            pywal-opacity.sh
         else
             wal -q -i ~/wallpaper/
+            pywal-opacity.sh
         fi
     ;;
 
