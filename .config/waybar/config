@@ -9,17 +9,9 @@
 //
 {
     // General Settings
-
-    // Position TOP
     "layer": "bottom",
     "margin-bottom": 0,
-
-    // Position BOTTOM
-    "position": "bottom",
-    // "margin-top": 0,
-    // "margin-bottom": 14,
-    
-    "layer": "top",
+    "position": "top",
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
@@ -58,6 +50,7 @@
         "group/hardware",
         "custom/cliphist",
         // START IDLE TOOGLE
+        "custom/keybindings",
         "idle_inhibitor",
         // END IDLE TOOGLE
         // START TRAY TOOGLE

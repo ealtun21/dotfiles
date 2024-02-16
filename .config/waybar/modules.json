@@ -103,7 +103,7 @@
 
     // Keybindings
     "custom/keybindings": {
-        "format": "",
+        "format": "󰌌",
         "on-click": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
