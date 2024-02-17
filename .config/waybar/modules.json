@@ -24,7 +24,7 @@
     // Taskbar
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 18,
+        "icon-size": 16,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
@@ -218,7 +218,8 @@
             "disk",
             "cpu",
             "memory",
-            "hyprland/language"
+            "hyprland/language",
+            "tray"
         ]
     },
     
