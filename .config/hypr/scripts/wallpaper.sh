@@ -47,6 +47,7 @@ case $1 in
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             ~/.config/hypr/scripts/pywal-opacity.sh 
+            wpg -s "$(awk -F '"' '/--wallpaper: url/{print $2}' ~/.cache/wal/colors.css)"
             exit
         fi
         wal -q -i ~/wallpaper/$selected
@@ -85,6 +86,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 cat ~/.cache/wal/sequences
 # pywal-discord
 pywalfox update 2> /dev/null &
+wpg -s "$(awk -F '"' '/--wallpaper: url/{print $2}' ~/.cache/wal/colors.css)"
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
