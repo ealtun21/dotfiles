@@ -63,7 +63,8 @@ window#waybar {
     border-radius: 15px;
     border: 0px;
     color: @textcolor3;
-    transition: all 0.3s ease-in-out;
+    background: rgba(0,0,0,0);
+    transition: all 0.3s ease;
 }
 
 #workspaces button.active {
@@ -71,7 +72,7 @@ window#waybar {
     background: @workspacesbackground2;
     border-radius: 15px;
     min-width: 40px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 #workspaces button:hover {
