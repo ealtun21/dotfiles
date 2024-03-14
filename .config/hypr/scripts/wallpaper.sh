@@ -8,6 +8,10 @@
 #  
 # ----------------------------------------------------- 
 
+FILE="$HOME/.config/waybar/style.css"
+IMPORT1='@import "../../.cache/wal/colors-waybar.css";'
+IMPORT2='@import "../../.cache/wal/rgba_colors.css";'
+
 # Cache file for holding the current wallpaper
 cache_file="$HOME/.cache/current_wallpaper"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
@@ -48,6 +52,8 @@ case $1 in
             echo "No wallpaper selected"
             ~/.config/hypr/scripts/pywal-opacity.sh 
             wpg -s "$(awk -F '"' '/--wallpaper: url/{print $2}' ~/.cache/wal/colors.css)"
+            sed -i "s|$IMPORT1|$IMPORT2|" "$FILE"
+            killall -SIGUSR2 waybar
             exit
         fi
         wal -q -i ~/wallpaper/$selected
@@ -87,6 +93,8 @@ cat ~/.cache/wal/sequences
 # pywal-discord
 pywalfox update 2> /dev/null &
 wpg -s "$(awk -F '"' '/--wallpaper: url/{print $2}' ~/.cache/wal/colors.css)"
+sed -i "s|$IMPORT1|$IMPORT2|" "$FILE"
+killall -SIGUSR2 waybar
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
