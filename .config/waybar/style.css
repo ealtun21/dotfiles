@@ -12,7 +12,7 @@
 /* -----------------------------------------------------
  * Import Pywal colors 
  * ----------------------------------------------------- */
-@import "../../.cache/wal/colors-waybar.css"; 
+@import "../../.cache/wal/rgba_colors.css"; 
 
 @define-color backgroundlight #FFFFFF;
 @define-color backgrounddark #FFFFFF;

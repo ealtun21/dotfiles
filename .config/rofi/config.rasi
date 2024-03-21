@@ -39,7 +39,7 @@ window {
     padding:                      0px;
     margin:                       0px; 
     color:                        #FFFFFF;
-    border:                       0px;
+    border:                       1px;
     border-color:                 #FFFFFF;
     cursor:                       "default";
     transparency:                 "real";
@@ -48,7 +48,7 @@ window {
     fullscreen:                   false;
     enabled:                      true;
     border-radius:                10px;
-    background-color:             transparent;
+    background-color:             @background;
 }
 
 /* ---- Mainbox ---- */
@@ -160,7 +160,7 @@ element {
     cursor:                       pointer;
     background-color:             @background;
     border-radius:                10px;
-    border:                       0px;
+    border:                       1px;
 }
 
 element normal.normal {
