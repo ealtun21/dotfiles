@@ -94,7 +94,7 @@ cat ~/.cache/wal/sequences
 pywalfox update 2> /dev/null &
 wpg -s "$(awk -F '"' '/--wallpaper: url/{print $2}' ~/.cache/wal/colors.css)"
 sed -i "s|$IMPORT1|$IMPORT2|" "$FILE"
-killall -SIGUSR2 waybar
+# killall -SIGUSR2 waybar
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
